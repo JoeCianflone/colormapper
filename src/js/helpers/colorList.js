@@ -1,4 +1,5 @@
-var colorList = {
+App.Helpers = App.Helpers || {};
+App.Helpers.colorList = {
    "000000": "black",
    "000080": "navy-blue",
    "0000c8": "dark-blue",
