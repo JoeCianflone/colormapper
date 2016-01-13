@@ -14,5 +14,12 @@ main {
 .display-area {
    @include span(last 8 of 16);
    @include font-size(22px);
-   padding: 10px;
+
+   textarea {
+      margin: 0 10px;
+      min-height: 250px;
+      padding: 10px;
+      width: 85%;
+   }
 }
+
