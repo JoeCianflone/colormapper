@@ -49,6 +49,8 @@ $breakpoints: (
 $colors: (
    black:     #000,
    white:     #fff,
+   cape-cod:  #434444,
+   charcoal:  #444444,
 );
 
 @include layout((
@@ -59,6 +61,4 @@ $colors: (
 ));
 
 $current-zindex:        100;
-
-
 
