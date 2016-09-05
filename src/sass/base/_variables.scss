@@ -58,9 +58,9 @@ $colors: (
 );
 
 @include layout((
-  columns: 16,
-  gutter-position: no-gutter,
-  gutters: 0,
+  columns: 12,
+  gutter-position: split,
+  gutters: 1/4,
   global-box-sizing: border-box
 ));
 

@@ -1,12 +1,23 @@
 .input-base {
-   @include font-size(18px);
+   @include font-size(20px);
+   border: 1px solid get-color(charcoal);
+   border-radius: 0.5rem;
    padding: 10px 5px;
    width: 100%;
 }
 
 button {
-   @include font-size(16px);
-   background: get-color(white);
+   @include font-size(18px);
+   background: get-color(charcoal);
    border: 1px solid get-color(charcoal);
-   margin: 10px;
+   border-radius: 0.5rem;
+   color: get-color(white);
+   margin: 2rem 0;
+   padding: 0.8rem 1.5rem 0.5rem 1.5rem;
+   line-height: 1;
+   @include transition(all, 0.5s, ease);
+
+   &:hover {
+      background: darken(get-color(charcoal), 15%);
+   }
 }

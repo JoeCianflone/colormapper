@@ -25,6 +25,10 @@
    @return $current-zindex + $increment;
 }
 
+@mixin transition($transition-property, $transition-time, $method) {
+   transition: $transition-property $transition-time $method;
+}
+
 /**
  * This will strip a unit off a number turning it from a string to a number
  *
