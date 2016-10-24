@@ -57,10 +57,10 @@ var gulp       = require('gulp'),
  */
 var config = {
    dest: {
-      js:     "assets/js/",
-      css:    "assets/css/",
-      imgs:   "assets/images/",
-      fonts:  "assets/fonts/",
+      js:     "public/assets/js/",
+      css:    "public/assets/css/",
+      imgs:   "public/assets/images/",
+      fonts:  "public/assets/fonts/",
    },
    src: {
       js:        "src/js/",
