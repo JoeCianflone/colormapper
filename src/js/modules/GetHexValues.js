@@ -1,5 +1,12 @@
 App.Modules = App.Modules || {};
 App.Modules.GetHexValues = function () {
+   var current = [];
+
+   var isHexValue = function(val) {
+      var intVal = parseInt(val, 16);
+
+      return (pad(intVal.toString(16), 6) === val.toLowerCase());
+   };
    /**
     * Entry point. This function will grab the hex
     * code and do the lookups and return the
@@ -11,14 +18,40 @@ App.Modules.GetHexValues = function () {
       var hexList = $('.js-hex-code').val().split(",");
 
       _.each(hexList, function(hexItem) {
-         var hexVal = hexItem.trim().replace("#", ""),
-             match = findMatch(hexVal);
+         var hexVal = hexItem.trim().replace("#", "");
+         if (! _.contains(current, hexVal)) {
+            current.push(hexVal);
+            attemptHexSearch(hexVal);
+         }
+      });
+   };
 
+   var pad = function(num, size) {
+       var s = "000000" + num;
+       return s.substr(s.length-size);
+   }
+
+   var attemptHexSearch = function(hexVal) {
+      if (isHexValue(hexVal) && hexVal.length === 6) {
+         var match = findMatch(hexVal);
          $(".js-show").append(Handlebars.templates.colorSnippet({
             colorName: match,
             hexValue: hexVal
          }));
-      });
+      } else {
+         if (hexVal.length < 6) {
+            displayError(hexVal, "is not a full hexcode.  Please use all 6 digits");
+         } else {
+            displayError(hexVal, "is not a hex");
+         }
+      }
+   };
+
+   var displayError = function(hex, message) {
+      $(".js-show").append(Handlebars.templates.invalidHex({
+         hexValue: hex,
+         message: message
+      }));
    };
 
    /**

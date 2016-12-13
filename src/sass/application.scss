@@ -25,9 +25,13 @@
    height: 20px;
    width: 20px;
 }
-.color-bloop-text {
+.color-bloop-text,
+.color-bloop-error, {
    margin-left: .5rem;
 
+}
+.color-bloop-error {
+   color: get-color(carmine-red);
 }
 .color-bloop-item {
     align-content: space-around;
